@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   const navLinks = [
-    { href: "#portfolio", label: "Portfolio" },
+    { href: "#portfolio", label: "Portfolio", icon: "/assets/images/65dddd9f94fe66a19eea5c7b_burger.webp" },
     { href: "#about", label: "About" },
     { href: "#insights", label: "Insights" },
   ];
@@ -17,18 +17,19 @@ const Navbar = () => {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-black rounded-md bg-white py-6 px-2 text-xs"
+                className="text-black rounded-md bg-white py-6 px-2 text-xs flex items-center gap-1"
               >
                 {link.label}
+                {link.icon && <img src={link.icon} alt="Menu Icon" className="w-4 h-4" />}
               </a>
             ))}
           </div>
         </div>
 
-         <div className="bg-[#5D5E5F] p-1 rounded-md">  
-        <button className="bg-[#FFB701] text-black font-semibold px-2 py-5 rounded-md">
-          Let's do this
-        </button>
+        <div className="bg-[#5D5E5F] p-1 rounded-md">  
+          <button className="bg-[#FFB701] text-black font-semibold px-2 py-5 rounded-md">
+            Let's do this
+          </button>
         </div> 
       </div>
     </nav>
