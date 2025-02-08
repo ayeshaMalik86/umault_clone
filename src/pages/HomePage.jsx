@@ -2,6 +2,7 @@ import React from 'react'
 import HeroSection from '../components/HeroSection'
 import RegisterPage from '../components/RegisterPage'
 import ButtonStack from '../components/ButtonStack'
+import Advertisement from '../components/Advertisement'
 
 
 const HomePage = () => {
@@ -10,6 +11,7 @@ const HomePage = () => {
       <HeroSection/>
       <RegisterPage/>
       <ButtonStack/>
+      <Advertisement/>
     </div>
   )
 }
