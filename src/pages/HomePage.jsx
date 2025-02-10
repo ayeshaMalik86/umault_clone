@@ -3,6 +3,7 @@ import HeroSection from '../components/HeroSection'
 import RegisterPage from '../components/RegisterPage'
 import ButtonStack from '../components/ButtonStack'
 import Advertisement from '../components/Advertisement'
+import RevenueIncrease from '../components/RevenueIncrease'
 
 
 const HomePage = () => {
@@ -11,6 +12,7 @@ const HomePage = () => {
       <HeroSection/>
       <RegisterPage/>
       <ButtonStack/>
+      <RevenueIncrease/>
       <Advertisement/>
     </div>
   )

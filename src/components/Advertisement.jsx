@@ -57,7 +57,7 @@ const Advertisement = () => {
               )}
             </button>
           </div>
-          <p className="w-[30%] text-xl font-semibold">Watch out, when you hire Umault and create your company’s #1 top performing video… you become “the video person” in your company (we know, we’ve seen it happen).</p>
+          <p className="w-[30%] text-lg font-mona">Watch out, when you hire Umault and create your company’s #1 top performing video… you become “the video person” in your company (we know, we’ve seen it happen).</p>
         </div>
       </div>
     </div>
