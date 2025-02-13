@@ -20,7 +20,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative  w-full h-screen bg-gray-900 text-white overflow-hidden">
+    <div className="relative w-full h-screen bg-gray-900 text-white overflow-hidden">
       {/* Background Video */}
       <video 
         ref={videoRef}
@@ -32,25 +32,27 @@ const HeroSection = () => {
       >
         <source src={videoSrc} type="video/mp4" />
       </video>
- 
-      <div className="absolute top-24 left-48 text-3xl font-semibold leading-[28px]">
+
+      {/* Heading Text */}
+      <div className="absolute top-[20%] left-1/4 transform -translate-x-1/2 text-center text-2xl md:text-3xl font-semibold leading-tight md:leading-[28px]">
         <span className="block">BOLD CREATIVE</span>
-        <span className="block ml-32">THAT SHATTERS</span>
-        <span className="block ml-14">MARKETING FORMULAS</span>
+        <span className="block md:ml-32">THAT SHATTERS</span>
+        <span className="block md:ml-14">MARKETING FORMULAS</span>
       </div>
 
-      <div className="absolute right-56 top-80 space-y-4 text-lg font-semibold">
+      {/* Video Selector */}
+      <div className="absolute right-5 md:right-1/4 top-3/4 transform -translate-y-1/2 space-y-4 text-lg md:text-xl font-semibold">
         {Object.keys(videos).map((key) => (
           <div 
             key={key} 
             className={`relative flex items-center cursor-pointer border-b-2 border-transparent hover:border-white transition-opacity ${videoSrc === videos[key] ? 'border-white' : 'opacity-70'}`}
             onClick={() => setVideoSrc(videos[key])}
           >
-            <span className="text-3xl color-white">{key}</span>
+            <span className="text-xl md:text-3xl">{key}</span>
             {videoSrc === videos[key] && (
               <button 
                 onClick={toggleMute} 
-                className="absolute left-[-35px] bg-white/20 rounded-full p-1"
+                className="absolute left-[-30px] md:left-[-35px] bg-white/20 rounded-full p-1"
               >
                 {isMuted ? (
                   <img src="/assets/images/6619081cfc6303cff2ab1955_sound mute.svg" alt="Mute" className="w-4 h-4" />

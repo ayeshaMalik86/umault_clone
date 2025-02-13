@@ -14,18 +14,18 @@ const Advertisement = () => {
   return (
     <div className="flex w-full min-h-screen text-white">
       {/* Sidebar with lines */}
-      <div className="flex flex-col justify-around p-9">
+      <div className="flex flex-col justify-around p-3 md:p-9">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-14 h-[5px] mt-10 bg-white"></div>
+          <div key={i} className="w-10 md:w-14 h-[5px] mt-10 bg-white"></div>
         ))}
       </div>
 
       {/* Main Content */}
       <div className="bg-white rounded-md min-h-screen flex flex-col mt-20 w-full text-black overflow-hidden">
-        <p className="text-6xl font-bold p-10 w-[90%]">
+        <p className="text-4xl sm:text-6xl font-bold p-10 w-[90%]">
           YOU MIGHT HAVE TO HIRE AN ASSISTANT TO HANDLE ALL YOUR FAN MAIL.
         </p>
-        <div className="ml-36 mb-20 flex items-center justify-between p-5 mt-10">
+        <div className="md:ml-36 mb-20 flex flex-wrap items-center justify-between p-5 mt-10">
           <div className="relative w-96">
             <video 
               ref={videoRef}
@@ -57,7 +57,7 @@ const Advertisement = () => {
               )}
             </button>
           </div>
-          <p className="w-[30%] text-lg font-mona">Watch out, when you hire Umault and create your company’s #1 top performing video… you become “the video person” in your company (we know, we’ve seen it happen).</p>
+          <p className="lg:w-[30%] mt-5 text-2xl md:text-lg  font-mona">Watch out, when you hire Umault and create your company’s #1 top performing video… you become “the video person” in your company (we know, we’ve seen it happen).</p>
         </div>
       </div>
     </div>

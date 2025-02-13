@@ -1,55 +1,36 @@
 import React from "react";
 
-const RevenueIncrease = () => {
-  return (
-    <div className=" bg-black flex gap-10 items-center justify-center">
-      {/* Circle Grid */}
-      <div className="grid grid-cols-4 gap-4">
-        <style jsx>{`
-          .circle {
-            width: 7rem;
-            height: 7rem; 
-            border-radius: 50%;
-          }
-        `}</style>
-
-        {/* First Row */}
-        <div className="circle bg-cover bg-center" style={{ backgroundImage: "url('/assets/images/661531aebc768deb9b8fdc36_kids-in-space-p-500.png')" }}></div>
-        <div className="circle bg-[#4D4D4D]"></div>
-        <div className="circle bg-white"></div>
-        <div className="circle bg-white"></div>
-
-        {/* Second Row */}
-        <div className="circle bg-[#4D4D4D]"></div>
-        <div className="circle bg-gray-300"></div>
-        <div className="circle bg-cover bg-center" style={{ backgroundImage: "url('assets/images/6615269369f6ffa8075f2c55_dell-tech-innovator-at-wrok.png')" }}></div>
-        <div className="circle bg-cover bg-center" style={{ backgroundImage: "url('assets/images/661525b96c7d65f427986a57_collabro.io-img.png')" }}></div>
-
-        {/* Third Row */}
-        <div className="circle bg-[#4D4D4D]"></div>
-        <div className="circle bg-gray-300"></div>
-        <div className="col-span-2 row-span-2 bg-cover bg-center w-full h-full" style={{ backgroundImage: "url('/assets/images/65f9b0a42766dfb27cd05202_Frame 145.svg')" }}></div>
-
-        {/* Fourth Row */}
-        <div className="circle bg-cover bg-center" style={{ backgroundImage: "url('assets/images/6615269369f6ffa8075f2c55_dell-tech-innovator-at-wrok.png')" }}></div>
-        <div className="circle bg-cover bg-center" style={{ backgroundImage: "url('assets/images/661525b96c7d65f427986a57_collabro.io-img.png')" }}></div>
+const RevenueIncrease= ()=>{
+  return(
+    <div className="flex gap-2 xs:gap-4 md:gap-6 lg:gap-8 items-center justify-center py-10">
+      <div className='grid grid-cols-4 gap-1 xs:gap-2 md:gap-4'>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%] bg-cover bg-center' style={{backgroundImage : `url('/assets/images/661531aebc768deb9b8fdc36_kids-in-space-p-800.png')`}}></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%]  bg-[#4D4D4D]'></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%]  bg-white'></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%]  bg-white'></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%]  bg-[#4D4D4D]'></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%]  bg-gray-300'></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%] bg-cover bg-center' style={{backgroundImage : `url('/assets/images/6615269369f6ffa8075f2c55_dell-tech-innovator-at-wrok.png')`}}></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%] bg-cover bg-center' style={{backgroundImage : `url('/assets/images/661525b96c7d65f427986a57_collabro.io-img.png')`}}></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%]  bg-[#4D4D4D]'></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%]  bg-gray-300'></div>
+        <div className='col-span-2 row-span-2 w-full h-full rounded-[50%] bg-cover bg-center' style={{backgroundImage : `url('/assets/images/65f9b0a42766dfb27cd05202_Frame 145.svg')`}}></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%] bg-cover bg-center' style={{backgroundImage :` url('/assets/images/6615269369f6ffa8075f2c55_dell-tech-innovator-at-wrok.png')`}}></div>
+        <div className='w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-[50%] bg-cover bg-center' style={{backgroundImage : `url('/assets/images/661525b96c7d65f427986a57_collabro.io-img.png')`}}></div>
+        
       </div>
-
-      <div className="flex flex-col h-[500px]">
-        {/* Text Section */}
-        <div className="text-[#3055FF] font-semibold text-3xl">
-          <p>REVENUE</p>
-          <p>INCREASE</p>
-          <p>BY</p>
-        </div>
-
-        {/* Percentage */}
-        <div className="flex">
-          <span className="text-[#3055FF] text-[25rem] font-bold">700</span>
+      <div className='flex flex-col justify-between h-[200px] md:h-[400px] lg:h-[500px]'>
+        <div class="text-[#3055FF] font-semibold text-sm xs:text-xl md:text-2xl lg:text-3xl"><p>REVENUE</p><p>INCREASE</p><p>BY</p></div>
+        <div class="flex">
+          <span class="flex items-center text-[#3055FF] -mb-4 text-[6rem] xs:text-[7rem] md:text-[14rem]  lg:text-[18rem] font-bold h-[150px] xs:h-[220px]  lg:h-[350px]">
+            7
+            <span className='rotate-6 '>0</span>
+            <span className='-rotate-0 xs:-rotate-6'>0</span>
+          </span>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default RevenueIncrease;

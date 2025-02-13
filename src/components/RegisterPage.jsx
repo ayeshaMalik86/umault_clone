@@ -38,16 +38,17 @@ const RegisterPage = () => {
   return (
     <div className="flex w-full min-h-screen text-white">
       {/* Sidebar with lines */}
-      <div className="flex flex-col justify-around p-9">
+      <div className="flex flex-col justify-around p-3 md:p-9">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-14 h-[5px] mt-10 bg-white"></div>
+          <div key={i} className="w-10 md:w-14 h-[5px] mt-10 bg-white">
+          </div>
         ))}
       </div>
 
       {/* Main Content */}
       <div className="bg-white rounded-md min-h-screen flex flex-col mt-20 w-full text-black overflow-hidden">
-        <div className="flex flex-col md:flex-row justify-between items-center w-full max-w-6xl">
-          <div className="text-xl md:text-2xl lg:text-3xl w-[50%] h-full font-bold relative overflow-hidden">
+        <div className="flex flex-col md:flex-row justify-between items-center md:w-full max-w-6xl">
+          <div className="text-xl md:text-2xl lg:text-3xl mt-44 w-full md:h-full font-bold relative">
             {/* Floating Coins */}
             {coinPositions.map((pos, i) => (
               <img
@@ -92,9 +93,9 @@ const RegisterPage = () => {
           </div>
         </div>
 
-        <div className="mt-32 flex flex-col text-center mb-8">
-          <p className="font-bold text-3xl mb-8">MAKE YOUR AUDIENCE SAY</p>
-          <h1 className="inline-block text-8xl font-bold items-center">
+        <div className="mt-32 flex flex-col md:text-center mb-8">
+          <p className="font-bold text-xl md:text-3xl mb-8">MAKE YOUR AUDIENCE SAY</p>
+          <h1 className="inline-block text-5xl md:text-8xl font-bold">
             “I DIDN'T REALIZE I WAS WATCHING AN AD... I JUST
             <div className="inline-flex relative">
               <video autoPlay loop playsInline muted={isMuted} className="inline-flex h-20 mx-2 rounded-sm">
