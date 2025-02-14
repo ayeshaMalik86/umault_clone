@@ -14,7 +14,7 @@ const images = [
 
 const PerformingVideo = () => {
   return (
-    <div className='flex flex-col justify-center items-center text-white mt-28 p-6'>
+    <div className='flex flex-col justify-center items-center text-white lg:mt-28 p-6 lg:mb-20'>
       <div className='flex items-end gap-10 md:gap-20'>
         <div className='grid grid-cols-4 gap-1 xs:gap-2 md:gap-4'>
           {images.map((item, index) => (
@@ -27,7 +27,7 @@ const PerformingVideo = () => {
         </div>
         <p className='text-[#FFB701] text-sm sm:text-2xl font-semibold'>PERFORMING VIDEOS</p>
       </div>
-      <div className='text-[#FFB701] text-[6rem] xs:text-[7rem] md:text-[14rem]  lg:text-[20rem] font-bold h-[150px] xs:h-[220px]  lg:h-[350px] md:-mt-24'>
+      <div className='text-[#FFB701] text-[6rem] xs:text-[7rem] md:text-[12rem]  lg:text-[18rem] font-bold h-[150px] xs:h-[220px]  lg:h-[350px] lg:-mt-24'>
         <p>#1 TOP</p>
       </div>
     </div>

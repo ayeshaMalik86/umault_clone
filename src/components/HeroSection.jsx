@@ -37,7 +37,7 @@ const HeroSection = () => {
       <div className="absolute top-[20%] left-1/4 transform -translate-x-1/2 text-center text-2xl md:text-3xl font-semibold leading-tight md:leading-[28px]">
         <span className="block">BOLD CREATIVE</span>
         <span className="block md:ml-32">THAT SHATTERS</span>
-        <span className="block md:ml-14">MARKETING FORMULAS</span>
+        <span className="block ml-8 md:ml-14">MARKETING FORMULAS</span>
       </div>
 
       {/* Video Selector */}

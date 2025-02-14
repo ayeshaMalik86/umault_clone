@@ -27,15 +27,15 @@ const Spectacular = () => {
       </div>
 
       {/* Main Content */}
-      <div className="bg-white flex flex-col w-full text-black relative p-10">
-        <div className="text-4xl md:text-8xl font-bold relative leading-snug">
-            <div>
+      <div className="bg-white flex flex-col w-full text-black overflow-hidden relative p-10">
+        <div className="text-4xl md:text-7xl lg:8xl font-bold relative leading-snug">
+
           <p>THE</p>
           <p>RESULTS</p>
           <p>CAN BE</p>
           <p>PRETTY</p>
           <p>SPECTACULAR.</p>
-        </div>
+
 
         {/* Floating Coins */}
         {coinPositions.map((pos, i) => (

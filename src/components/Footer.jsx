@@ -35,7 +35,7 @@ const Footer = () => {
       </div>
 
       <div>
-        <button className="w-full bg-[#FFB701] py-11 rounded-full text-black text-2xl md:text-5xl font-bold relative overflow-hidden">
+        <button className="w-full bg-[#FFB701] py-6 md:py-11 rounded-full text-black text-2xl md:text-5xl font-bold relative overflow-hidden">
           <span className="inline-block">LET'S DO THIS</span>
         </button>
         <p className="p-5 pl-12 flex gap-1 items-center font-semibold">

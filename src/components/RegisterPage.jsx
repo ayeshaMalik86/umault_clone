@@ -95,7 +95,7 @@ const RegisterPage = () => {
 
         <div className="mt-32 flex flex-col md:text-center mb-8">
           <p className="font-bold text-xl md:text-3xl mb-8">MAKE YOUR AUDIENCE SAY</p>
-          <h1 className="inline-block text-5xl md:text-8xl font-bold">
+          <h1 className="inline-block p-2 text-5xl md:text-8xl font-bold">
             “I DIDN'T REALIZE I WAS WATCHING AN AD... I JUST
             <div className="inline-flex relative">
               <video autoPlay loop playsInline muted={isMuted} className="inline-flex h-20 mx-2 rounded-sm">
