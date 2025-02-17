@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { motion} from "framer-motion"; 
 
 const Advertisement = () => {
   const videoRef = useRef(null);
@@ -9,6 +10,11 @@ const Advertisement = () => {
       videoRef.current.muted = !videoRef.current.muted;
       setIsMuted(videoRef.current.muted);
     }
+  };
+
+  const textAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
   };
 
   return (
@@ -22,11 +28,21 @@ const Advertisement = () => {
 
       {/* Main Content */}
       <div className="bg-white rounded-md min-h-screen flex flex-col mt-20 w-full text-black overflow-hidden">
-        <p className="text-4xl sm:text-6xl font-bold p-10 w-[90%]">
+        <motion.p className="text-4xl sm:text-6xl font-bold p-10 w-[90%]"
+        initial="hidden"
+        whileInView="visible"
+        variants={textAnimation}
+        viewport={{ once: false, amount: 0.5 }}
+        >
           YOU MIGHT HAVE TO HIRE AN ASSISTANT TO HANDLE ALL YOUR FAN MAIL.
-        </p>
+        </motion.p>
         <div className="md:ml-36 mb-20 flex flex-wrap items-center justify-between p-5 mt-10">
-          <div className="relative w-96">
+          <motion.div className="relative w-96"
+          initial="hidden"
+          whileInView="visible"
+          variants={textAnimation}
+          viewport={{ once: false, amount: 0.5 }}
+          >
             <video 
               ref={videoRef}
               autoPlay 
@@ -56,7 +72,7 @@ const Advertisement = () => {
                 />
               )}
             </button>
-          </div>
+          </motion.div>
           <p className="lg:w-[30%] mt-5 text-2xl md:text-lg  font-mona">Watch out, when you hire Umault and create your company’s #1 top performing video… you become “the video person” in your company (we know, we’ve seen it happen).</p>
         </div>
       </div>

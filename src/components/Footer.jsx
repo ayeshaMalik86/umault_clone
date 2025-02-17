@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const Footer = () => {
   return (
@@ -36,7 +37,16 @@ const Footer = () => {
 
       <div>
         <button className="w-full bg-[#FFB701] py-6 md:py-11 rounded-full text-black text-2xl md:text-5xl font-bold relative overflow-hidden">
-          <span className="inline-block">LET'S DO THIS</span>
+          <motion.span
+            className="inline-block"
+            initial={{ scale: 0.8 }}
+            whileHover={{
+              scale: 1.2,
+              transition: { type: "spring", stiffness: 300, damping: 10 },
+            }}
+          >
+            LET'S DO THIS
+          </motion.span>
         </button>
         <p className="p-5 pl-12 flex gap-1 items-center font-semibold">
           I agree with{" "}

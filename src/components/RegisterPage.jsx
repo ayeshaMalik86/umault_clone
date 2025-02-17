@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import { motion} from "framer-motion"; 
 
 const RegisterPage = () => {
   const videoRef = useRef(null);
@@ -6,8 +7,17 @@ const RegisterPage = () => {
   const [hoveredCoin, setHoveredCoin] = useState(null);
   const [coinPositions, setCoinPositions] = useState([]);
 
+  const lineAnimation = {
+    hidden: { opacity: 0, y: 20 }, // Hidden position (start below and invisible)
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }, // Visible position (animate to original)
+  };
+
+  const textAnimation = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8, delay: 0.2 } },
+  };
+
   useEffect(() => {
-    // Generate and store random positions once
     const positions = Array(6)
       .fill()
       .map(() => ({
@@ -40,8 +50,14 @@ const RegisterPage = () => {
       {/* Sidebar with lines */}
       <div className="flex flex-col justify-around p-3 md:p-9">
         {[...Array(6)].map((_, i) => (
-          <div key={i} className="w-10 md:w-14 h-[5px] mt-10 bg-white">
-          </div>
+          <motion.div
+            key={i}
+            className="w-10 md:w-14 h-[5px] mt-10 bg-white"
+            initial="hidden"
+            whileInView="visible"
+            variants={lineAnimation}
+            viewport={{ once: false, amount: 0.5 }} 
+          />
         ))}
       </div>
 
@@ -70,12 +86,23 @@ const RegisterPage = () => {
 
           {/* Video Container */}
           <div className="relative mr-5">
-            <p className="text-3xl md:text-5xl font-bold max-w-lg p-5 text-center md:text-left mt-5 md:mt-0">
+            <motion.p
+              className="text-3xl md:text-5xl font-bold max-w-lg p-5 text-center md:text-left mt-5 md:mt-0"
+              initial="hidden"
+              whileInView="visible"
+              variants={textAnimation}
+              viewport={{ once: false, amount: 0.5 }}
+            >
               YOU <br /> DESERVE <br /> BETTER <br /> THAN <br /> A BORING <br /> CORPORATE <br /> VIDEO
-            </p>
+            </motion.p>
 
             {/* Video Wrapper */}
-            <div className="relative w-64 md:w-80 lg:w-96">
+            <motion.div className="relative w-64 md:w-80 lg:w-96"
+             initial="hidden"
+             whileInView="visible"
+             variants={textAnimation}
+             viewport={{ once: false, amount: 0.5 }}
+            >
               <video ref={videoRef} autoPlay loop muted={isMuted} className="w-full rounded-md">
                 <source src="https://videos.umault.com/umault-trapped%20in%20a%20corporate%20video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -89,15 +116,34 @@ const RegisterPage = () => {
                   <img src="/assets/images/6619067dfd76f71c48c45289_sound on.svg" alt="Unmute" className="w-4 h-4" />
                 )}
               </button>
-            </div>
+            </motion.div>
           </div>
         </div>
 
         <div className="mt-32 flex flex-col md:text-center mb-8">
-          <p className="font-bold text-xl md:text-3xl mb-8">MAKE YOUR AUDIENCE SAY</p>
-          <h1 className="inline-block p-2 text-5xl md:text-8xl font-bold">
+          <motion.p
+            className="font-bold text-xl md:text-3xl mb-8"
+            initial="hidden"
+            whileInView="visible"
+            variants={textAnimation}
+            viewport={{ once: false, amount: 0.5 }}
+          >
+            MAKE YOUR AUDIENCE SAY
+          </motion.p>
+          <motion.h1
+            className="inline-block p-2 text-5xl md:text-8xl font-bold"
+            initial="hidden"
+            whileInView="visible"
+            variants={textAnimation}
+            viewport={{ once: false, amount: 0.5 }}
+          >
             “I DIDN'T REALIZE I WAS WATCHING AN AD... I JUST
-            <div className="inline-flex relative">
+            <div className="inline-flex relative"
+            initial="hidden"
+            whileInView="visible"
+            variants={textAnimation}
+            viewport={{ once: false, amount: 0.5 }}
+            >
               <video autoPlay loop playsInline muted={isMuted} className="inline-flex h-20 mx-2 rounded-sm">
                 <source src="https://videos.umault.com/umault-dont%20make%20a%20normal%20video.mp4" type="video/mp4" />
                 Your browser does not support HTML5 videos.
@@ -111,7 +157,7 @@ const RegisterPage = () => {
               </button>
             </div>
             WANTED TO KEEP WATCHING”
-          </h1>
+          </motion.h1>
         </div>
       </div>
     </div>
