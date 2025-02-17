@@ -3,11 +3,9 @@ import HeroSection from '../components/HeroSection'
 import RegisterPage from '../components/RegisterPage'
 import ButtonStack from '../components/ButtonStack'
 import Advertisement from '../components/Advertisement'
-import RevenueIncrease from '../components/RevenueIncrease'
-import PerformingVideo from '../components/PerformingVideo'
-import Views from '../components/Views'
 import B2Bpattern from '../components/B2Bpattern'
-import Spectacular from '../components/Spectacular'
+import { ServicesSection } from '../components/ServiceSection'
+
 
 
 const HomePage = () => {
@@ -17,10 +15,7 @@ const HomePage = () => {
       <RegisterPage/>
       <ButtonStack/>
       <B2Bpattern/>
-      <Spectacular/>
-      <RevenueIncrease/>
-      <Views/>
-      <PerformingVideo/>
+      <ServicesSection/>
       <Advertisement/>
     </div>
   )

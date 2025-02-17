@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const circleSizes = "w-[3rem] h-[3rem] xs:w-[4rem] xs:h-[4rem] md:w-[5rem] md:h-[5rem] lg:w-[7rem] lg:h-[7rem] rounded-full";
 const images = [
@@ -15,21 +16,47 @@ const images = [
 const PerformingVideo = () => {
   return (
     <div className='flex flex-col justify-center items-center text-white lg:mt-28 p-6 lg:mb-20'>
-      <div className='flex items-end gap-10 md:gap-20'>
-        <div className='grid grid-cols-4 gap-1 xs:gap-2 md:gap-4'>
+      <motion.div
+        className='flex items-end gap-10 md:gap-20'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+      >
+        <motion.div
+          className='grid grid-cols-4 gap-1 xs:gap-2 md:gap-4'
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
           {images.map((item, index) => (
-            <div
+            <motion.div
               key={index}
               className={`${circleSizes} ${item.type === 'color' ? item.color : 'bg-cover bg-center'}`}
               style={item.type === 'image' ? { backgroundImage: `url(${item.url})` } : {}}
-            ></div>
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1, delay: 0.3 + index * 0.1 }} // Delay for staggered fade-in
+            ></motion.div>
           ))}
-        </div>
-        <p className='text-[#FFB701] text-sm sm:text-2xl font-semibold'>PERFORMING VIDEOS</p>
-      </div>
-      <div className='text-[#FFB701] text-[6rem] xs:text-[7rem] md:text-[12rem]  lg:text-[18rem] font-bold h-[150px] xs:h-[220px]  lg:h-[350px] lg:-mt-24'>
+        </motion.div>
+        <motion.p
+          className='text-[#FFB701] text-sm sm:text-2xl font-semibold'
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.4 }}
+        >
+          PERFORMING VIDEOS
+        </motion.p>
+      </motion.div>
+
+      <motion.div
+        className='text-[#FFB701] text-[6rem] xs:text-[7rem] md:text-[12rem]  lg:text-[18rem] font-bold h-[150px] xs:h-[220px]  lg:h-[350px] lg:-mt-24'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        transition={{ duration: 1, delay: 0.5 }}
+      >
         <p>#1 TOP</p>
-      </div>
+      </motion.div>
     </div>
   );
 };

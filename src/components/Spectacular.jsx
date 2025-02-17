@@ -18,7 +18,7 @@ const Spectacular = () => {
   }, []);
 
   return (
-    <div className="flex w-full  text-white">
+    <div className="flex h-screen w-full  text-white">
       {/* Sidebar with lines */}
       <div className="flex flex-col justify-around p-3 md:p-9">
         {[...Array(6)].map((_, i) => (
@@ -27,7 +27,7 @@ const Spectacular = () => {
       </div>
 
       {/* Main Content */}
-      <div className="bg-white flex flex-col w-full text-black overflow-hidden relative p-10">
+      <div className="bg-white flex flex-col w-full text-black justify-center overflow-hidden relative p-10">
         <div className="text-4xl md:text-7xl lg:8xl font-bold relative leading-snug">
 
           <p>THE</p>
