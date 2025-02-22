@@ -66,10 +66,19 @@ const Footer = () => {
                 OUR MONTHLY NEWSLETTER
               </h4>
             </div>
-            <div className="flex mb-5 border border-gray-100 rounded-lg">
-              <input placeholder="Email" className="px-2 py-2 bg-black border border-[#5D5E5F] rounded-lg"></input>
-              <button className="bg-[#FFB701] px-2 py-2 rounded-lg border-2 border-[#5D5E5F] text-black">Subcribe</button>
+            <div className="mb-12 px-4">
+            <div className="flex flex-col sm:flex-row items-center border border-gray-400 rounded-sm w-full max-w-lg mx-auto">
+              <input
+                placeholder="Email"
+                className="flex-1 px-4 py-3 bg-black text-gray-300 focus:outline-none w-full sm:w-auto"
+                type="email"
+              />
+              <button className="border-2 border-gray-400 bg-[#FFB701] text-black py-3 px-4 hover:bg-yellow-600 transition w-full sm:w-auto">
+                Subscribe
+              </button>
             </div>
+</div>
+
           </div>
 
           {/* Links Section */}
