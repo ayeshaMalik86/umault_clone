@@ -13,7 +13,7 @@ const HomePage = () => {
     <div>
       <HeroSection/>
       <RegisterPage/>
-      <ButtonStack/>
+ {/*      <ButtonStack/> */}
       <Break/>
       <B2Bpattern/>
       <ServicesSection/>

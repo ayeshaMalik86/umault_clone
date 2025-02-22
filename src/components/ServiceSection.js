@@ -35,24 +35,15 @@ export const ServicesSection = () => {
         trigger: sectionRef.current,
         pin: true,
         start: "top top",
-        end: () => `+=${containerRef.current.offsetWidth * (isMobile ? 1 : 3)}`, // Adjust scroll length based on screen size
+        end: () => `+=${containerRef.current.offsetWidth * (isMobile ? 1 : 3)}`,
         scrub: 1,
-        snap: {
-          snapTo: 1 / (panels.length - 1),
-          duration: { min: 0.2, max: 0.3 },
-          ease: "power2.inOut",
-          inertia: false
-        },
-        onEnter: () => {
-          gsap.set(panels, { xPercent: 0 });
-        }
       },
     });
 
     return () => {
       tl.kill();
     };
-  }, [isMobile]); // Re-run the effect when isMobile changes
+  }, [isMobile]);
 
   return (
     <section

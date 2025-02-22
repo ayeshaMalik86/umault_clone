@@ -8,7 +8,7 @@ const AnimatedText = () => {
   const words = text.split(" ");
 
   const wordVariants = {
-    hidden: { color: "gray" },
+    hidden: { color: "#F2F2F2" },
     visible: { color: "black", transition: { duration: 0.4 } },
   };
 
