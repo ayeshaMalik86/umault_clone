@@ -5,7 +5,7 @@ import ButtonStack from '../components/ButtonStack'
 import Advertisement from '../components/Advertisement'
 import B2Bpattern from '../components/B2Bpattern'
 import { ServicesSection } from '../components/ServiceSection'
-
+import Break from '../components/Break'
 
 
 const HomePage = () => {
@@ -14,6 +14,7 @@ const HomePage = () => {
       <HeroSection/>
       <RegisterPage/>
       <ButtonStack/>
+      <Break/>
       <B2Bpattern/>
       <ServicesSection/>
       <Advertisement/>

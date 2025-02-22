@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const navLinks = [
     { href: "#portfolio", label: "Portfolio", icon: "/assets/images/65dddd9f94fe66a19eea5c7b_burger.webp" },
@@ -9,12 +10,24 @@ const Navbar = () => {
     { href: "#insights", label: "Insights" },
   ];
 
+  // Handle mouse movement over the button container
+  const handleMouseMove = (e) => {
+    const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - left - width / 2) * 0.3; // Adjust intensity
+    const y = (e.clientY - top - height / 2) * 0.3;
+    setPosition({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setPosition({ x: 0, y: 0 });
+  };
+
   return (
     <nav className="fixed top-0 left-0 w-[100%] z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center py-3">
         <div className="flex gap-2 bg-[#5D5E5F] rounded-md p-1">
           <p className="font-extrabold rounded-md bg-white p-3 text-3xl">ümault</p>
-          
+
           {/* Desktop Nav */}
           <div className="hidden md:flex gap-2 items-center font-semibold">
             {navLinks.map((link) => (
@@ -30,9 +43,16 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Desktop Button */}
-        <div className="hidden md:block bg-[#5D5E5F] p-1 rounded-md">  
-          <button className="bg-[#FFB701] text-black font-semibold px-2 py-5 rounded-md">
+        {/* Desktop Button with Animation */}
+        <div 
+          className="hidden md:block bg-[#5D5E5F] p-1 rounded-md relative overflow-hidden"
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseLeave}
+        >
+          <button
+            className="bg-[#FFB701] text-black font-semibold px-4 py-5 rounded-md transition-transform duration-100"
+            style={{ transform: `translate(${position.x}px, ${position.y}px)` }}
+          >
             Let's do this
           </button>
         </div> 
