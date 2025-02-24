@@ -23,14 +23,12 @@ body{
       transform: translate(0, 0);
     }
   }
-  
-  /* Default animation for all coins */
+
   .coin-animation {
     animation: float linear infinite;
     animation-play-state: running;
   }
   
-  /* Stop animation only for the hovered coin */
   .coin-animation:hover {
     animation-play-state: paused;
   }

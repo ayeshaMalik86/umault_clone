@@ -15,7 +15,6 @@ const HomePage = () => {
       <RegisterPage/> 
       <ButtonStack/> 
       <Break/>
-      <B2Bpattern/>
       <ServicesSection/>
       <Advertisement/>
     </div>
