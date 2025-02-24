@@ -47,7 +47,7 @@ const Advertisement = () => {
   };
 
   return (
-    <div className="flex w-full min-h-screen text-white">
+    <div className="flex  w-full min-h-screen text-white">
       {/* Sidebar with lines */}
       <div className="flex flex-col justify-around p-3 md:p-9">
         {[...Array(6)].map((_, i) => (
