@@ -14,6 +14,7 @@ const ButtonStack = () => {
   const [progress, setProgress] = useState({});
 
   useEffect(() => {
+    console.log("ButtonStack re-rendered"); 
     const fetchAnimations = async () => {
       try {
         const responses = await Promise.all(animationUrls.map(url => fetch(url)));
@@ -41,7 +42,7 @@ const ButtonStack = () => {
       {animations.length > 0 ? (
         animations.map((data, index) => (
           <div
-            key={index}
+            key={`lottie-${index}`}  
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
             className="p-2 -mt-16 sm:-mt-20 md:-mt-28 lg:-mt-40"
@@ -61,4 +62,4 @@ const ButtonStack = () => {
   );
 };
 
-export default ButtonStack;
+export default React.memo(ButtonStack);

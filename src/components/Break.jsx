@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, useTransform, useScroll } from "framer-motion";
 
-const CombinedAnimation = () => {
+const CombinedAnimation = React.memo(() => {
   const containerRef = useRef(null);
   const leftRef = useRef(null);
   const rightRef = useRef(null);
@@ -34,16 +34,30 @@ const CombinedAnimation = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting && scrollDirection === "down") {
+          if (
+            entry.isIntersecting &&
+            scrollDirection === "down" &&
+            leftRef.current &&
+            rightRef.current &&
+            leftTextRef.current &&
+            rightTextRef.current
+          ) {
             leftRef.current.classList.add("animate-tilt-left");
             rightRef.current.classList.add("animate-tilt-right");
             leftTextRef.current.classList.add("animate-text-left");
             rightTextRef.current.classList.add("animate-text-right");
-            
+
             setTimeout(() => {
               setIsBreakAnimationComplete(true);
             }, 1000);
-          } else if (!entry.isIntersecting && scrollDirection === "up") {
+          } else if (
+            !entry.isIntersecting &&
+            scrollDirection === "up" &&
+            leftRef.current &&
+            rightRef.current &&
+            leftTextRef.current &&
+            rightTextRef.current
+          ) {
             leftRef.current.classList.remove("animate-tilt-left");
             rightRef.current.classList.remove("animate-tilt-right");
             leftTextRef.current.classList.remove("animate-text-left");
@@ -75,7 +89,11 @@ const CombinedAnimation = () => {
   return (
     <div ref={containerRef} className="h-screen w-full relative overflow-hidden">
       {/* B2B Pattern (underneath) */}
-      <div className={`absolute inset-0 bg-black transition-opacity duration-1000 ${isBreakAnimationComplete ? 'opacity-100' : 'opacity-0'}`}>
+      <div
+        className={`absolute inset-0 bg-black transition-opacity duration-1000 ${
+          isBreakAnimationComplete ? "opacity-100" : "opacity-0"
+        }`}
+      >
         <div className="h-screen sticky top-0 flex text-white">
           <div className="flex flex-col justify-around p-3 md:p-9">
             {[...Array(6)].map((_, i) => (
@@ -94,13 +112,23 @@ const CombinedAnimation = () => {
       </div>
 
       {/* Split Screen Animation (overlay) */}
-      <div className={`absolute inset-0 bg-black transition-opacity duration-1000 ${isBreakAnimationComplete ? 'opacity-0' : 'opacity-100'}`}>
+      <div
+        className={`absolute inset-0 bg-black transition-opacity duration-1000 ${
+          isBreakAnimationComplete ? "opacity-0" : "opacity-100"
+        }`}
+      >
         {/* Center container for text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10 pointer-events-none">
-          <span ref={leftTextRef} className="text-white text-4xl font-bold mb-4 transition-all duration-1000 ease-in-out">
+          <span
+            ref={leftTextRef}
+            className="text-white text-4xl font-bold mb-4 transition-all duration-1000 ease-in-out"
+          >
             And
           </span>
-          <span ref={rightTextRef} className="text-white text-[75px] md:text-[150px] lg:text-[300px] font-bold transition-all duration-1000 ease-in-out">
+          <span
+            ref={rightTextRef}
+            className="text-white text-[75px] md:text-[150px] lg:text-[300px] font-bold transition-all duration-1000 ease-in-out"
+          >
             Break
           </span>
         </div>
@@ -134,6 +162,6 @@ const CombinedAnimation = () => {
       `}</style>
     </div>
   );
-};
+});
 
 export default CombinedAnimation;

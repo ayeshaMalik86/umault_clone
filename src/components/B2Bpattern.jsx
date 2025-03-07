@@ -5,12 +5,11 @@ const B2Bpattern = () => {
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
-    offset: ["start start", "end start"], // Start scrolling when the section enters the viewport
+    offset: ["start start", "end start"], 
   });
 
-  // Make the text grow fast and appear immediately
-  const scale = useTransform(scrollYProgress, [0, 0.1], [0, 1]); // Scale up quickly
-  const opacity = useTransform(scrollYProgress, [0, 0.05], [0, 1]); // Make text appear almost immediately
+  const scale = useTransform(scrollYProgress, [0, 0.1], [0, 1]); 
+  const opacity = useTransform(scrollYProgress, [0, 0.05], [0, 1]); 
 
   return (
     <div className="relative">

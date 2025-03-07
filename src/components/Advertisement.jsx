@@ -1,34 +1,7 @@
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import AnimatedText from './AnimatedText'
 
-const AnimatedText = () => {
-  const textRef = useRef(null);
-  const text =
-    "Watch out, when you hire Umault and create your company’s #1 top performing video… you become “the video person” in your company (we know, we’ve seen it happen).";
-  const words = text.split(" ");
-
-  const wordVariants = {
-    hidden: { color: "#F2F2F2" },
-    visible: { color: "black", transition: { duration: 0.4 } },
-  };
-
-  return (
-    <motion.p
-      ref={textRef}
-      className="lg:w-[30%] mt-5 text-2xl md:text-lg font-mona flex flex-wrap gap-1"
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.5 }}
-      transition={{ staggerChildren: 0.2 }}
-    >
-      {words.map((word, index) => (
-        <motion.span key={index} variants={wordVariants} className="inline-block">
-          {word}
-        </motion.span>
-      ))}
-    </motion.p>
-  );
-};
 
 const Advertisement = () => {
   const videoRef = useRef(null);
